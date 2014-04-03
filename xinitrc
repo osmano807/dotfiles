@@ -25,8 +25,6 @@ thunar --daemon &
 
 urxvtd -q -f -o
 
-dunst &
-
 # Must be the last with an exec
 # because exec makes the proccess take control
 # over the xinit
