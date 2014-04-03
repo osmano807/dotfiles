@@ -15,3 +15,5 @@ fi
 eval `dircolors ~/.dir_colors`
 
 export TERMINAL=urxvtc
+
+alias sudo='sudo '
