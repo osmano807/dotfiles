@@ -13,3 +13,5 @@ if [[ -z $CHECKUPDATES_DB ]]; then
 fi
 
 eval `dircolors ~/.dir_colors`
+
+export TERMINAL=st
