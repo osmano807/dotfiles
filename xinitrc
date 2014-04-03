@@ -11,6 +11,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
+. /etc/profile.d/infinality-settings.sh
+
 if [[ -z $CHECKUPDATES_DB ]]; then
         export CHECKUPDATES_DB="/var/tmp/checkup-db-${USER}/"
 fi
