@@ -25,6 +25,8 @@ autocutsel -selection PRIMARY -fork &
 /usr/lib/lxpolkit/lxpolkit &
 thunar --daemon &
 
+volumeicon &
+
 urxvtd -q -f -o
 
 # Must be the last with an exec
