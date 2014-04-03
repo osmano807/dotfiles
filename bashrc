@@ -14,4 +14,4 @@ fi
 
 eval `dircolors ~/.dir_colors`
 
-export TERMINAL=st
+export TERMINAL=urxvtc
