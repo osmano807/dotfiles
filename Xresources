@@ -1,4 +1,4 @@
-URxvt.font: xft:monospace:size=12
+URxvt.font: xft:Source Code Pro for Powerline:pixelsize=18
 URxvt.scrollBar: false
 URxvt.urgentOnBell: true
 
