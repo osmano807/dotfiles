@@ -1,0 +1,94 @@
+\ProvidesFile{abnt-numeric.cbx}
+[\abx@cbxid]
+
+\ExecuteBibliographyOptions{labelnumber,autocite=inline}
+\renewcommand*{\multicitedelim}{\addcomma\space}
+\providebool{bbx:subentry}
+\DeclareFieldFormat{entrysetcount}{\mknumalph{#1}}
+
+\newbibmacro*{cite}{%
+  \printtext[bibhyperref]{%
+    \printfield{prefixnumber}%
+    \printfield{labelnumber}%
+    \ifbool{bbx:subentry}
+      {\printfield{entrysetcount}}
+      {}}}
+
+\newbibmacro*{textcite}{%
+  \iffieldequals{namehash}{\cbx@lasthash}
+    {\multicitedelim}
+    {\cbx@tempa
+     \ifnameundef{labelname}
+       {\printfield[citetitle]{labeltitle}}
+       {\printnames{labelname}}%
+     \addspace\bibopenparen}%
+  \ifnumequal{\value{citecount}}{1}
+    {\usebibmacro{prenote}}
+    {}%
+  \usebibmacro{cite}%
+  \savefield{namehash}{\cbx@lasthash}%
+  \gdef\cbx@tempa{\bibcloseparen\multicitedelim}}
+
+\DeclareCiteCommand{\cite}[\mkbibparens]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\parencite}[\mkbibparens]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\footcite}[\mkbibfootnote]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\footcitetext}[\mkbibfootnotetext]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\smartcite}[\iffootnote\mkbibparens\mkbibfootnote]
+  {\usebibmacro{prenote}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\textcite}
+  {\let\cbx@tempa=\empty
+   \undef\cbx@lasthash}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{textcite}}
+  {}
+  {\usebibmacro{postnote}%
+   \bibcloseparen}
+
+\DeclareCiteCommand{\supercite}[\mkbibsuperscript]
+  {\iffieldundef{prenote}
+     {}
+     {\BibliographyWarning{Ignoring prenote argument}}%
+   \iffieldundef{postnote}
+     {}
+     {\BibliographyWarning{Ignoring postnote argument}}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\supercitedelim}
+  {}
+
+\DeclareMultiCiteCommand{\cites}[\mkbibparens]{\cite}{\multicitedelim}
+\DeclareMultiCiteCommand{\parencites}[\mkbibparens]{\parencite}{\multicitedelim}
+\DeclareMultiCiteCommand{\smartcites}[\iffootnote\mkbibparens\mkbibfootnote]{\smartcite}{\multicitedelim}
+
+\DeclareFieldFormat[article,misc,incollection,inbook]{title}{#1} % título de artigo sem estilo, que já é, por si, um estilo
+
+\endinput
