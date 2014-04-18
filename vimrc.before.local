@@ -8,3 +8,7 @@ if !exists('g:spf13_bundle_groups')
 endif
 
 let g:haddock_browser='/usr/bin/chromium'
+
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
