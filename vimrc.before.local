@@ -1,1 +1,10 @@
 let g:airline_powerline_fonts=1
+
+if !exists('g:spf13_bundle_groups')
+    let g:spf13_bundle_groups=['general', 'writing',
+                \ 'youcompleteme', 'programming', 'php', 'ruby',
+                \ 'python', 'twig', 'javascript', 'html', 'misc',
+                \ 'haskell',]
+endif
+
+let g:haddock_browser='/usr/bin/chromium'
