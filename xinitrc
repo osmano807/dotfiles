@@ -30,6 +30,9 @@ thunar --daemon &
 
 urxvtd -q -f -o
 
+# Wallpapper
+eval $(cat ~/.fehbg)
+
 # Must be the last with an exec
 # because exec makes the proccess take control
 # over the xinit
