@@ -150,3 +150,8 @@ bindsym $mod+r mode "resize"
 bar {
         status_command python3 ~/.i3/bar.py
 }
+
+# media keys
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 3%+
+bindsym XF86AudioLowerVolume exec amixer -q set Master 3%-
+bindsym XF86AudioMute exec amixer -q set Master toggle
