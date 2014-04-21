@@ -39,9 +39,10 @@ status.register("wireless",
                 interface="wlp1s0",
                 format_up="{essid} {quality:3.0f}%",)
 
-status.register("alsa",
+status.register("pulseaudio",
                 format="♪ {volume} {muted}",
                 # color="#FF0000",
-                color_muted="#888888",)
+                #color_muted="#888888",
+                )
 
 status.run()

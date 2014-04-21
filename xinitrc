@@ -25,7 +25,7 @@ autocutsel -selection PRIMARY -fork &
 /usr/lib/lxpolkit/lxpolkit &
 thunar --daemon &
 
-#/usr/bin/start-pulseaudio-x11
+/usr/bin/start-pulseaudio-x11
 #volumeicon &
 
 urxvtd -q -f -o
