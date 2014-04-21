@@ -89,4 +89,11 @@ export TERMINAL=urxvtc
 
 export EDITOR=vim
 
+# https://wiki.archlinux.org/index.php/java#Illegible_fonts
+_JAVA_OPTIONS="${_JAVA_OPTIONS} -Dawt.useSystemAAFontSettings=on"
+_JAVA_OPTIONS="${_JAVA_OPTIONS} -Dswing.aatext=true"
+_JAVA_OPTIONS="${_JAVA_OPTIONS} -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
+#_JAVA_OPTIONS="${_JAVA_OPTIONS} -Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
+export _JAVA_OPTIONS
+
 #alias sudo='sudo '
